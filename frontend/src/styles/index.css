@@ -590,3 +590,6 @@ img:active,
     cursor: pointer;
     outline: none!important;
 }
+figure{
+display: flex;
+}

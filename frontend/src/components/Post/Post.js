@@ -102,7 +102,6 @@ const Post = ({
           </div>}
           {post.attachmentUrl.split(".").pop() === "mp3" &&
           <figure>
-          <figcaption>Audio</figcaption>
           <audio
               controls
               src={post.attachmentUrl}>
