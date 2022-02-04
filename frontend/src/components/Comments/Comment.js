@@ -14,7 +14,7 @@ const { user } = useContext(UserContext);
   return (
     <li key={"singleComment_"+id}>
       <div className="commentaire_user">
-        {commentaire}
+       <p> {commentaire}</p>
         <div className="comment_info">
             <div className="comment_userName">{userName}</div>
             <div className="comment_date">

@@ -7,8 +7,6 @@ import MyProfile from "./Profiles/MyProfile";
 import Search from "./Search";
 import ManageUsersProfile from "./Profiles/ManageUsersProfile";
 
-
-
 function Banner({ userName, setUserName }) {
   const { user } = useContext(UserContext);
   const [viewProfile, setViewProfile] = useState(false);
@@ -27,19 +25,17 @@ function Banner({ userName, setUserName }) {
       user.isLogged = false;
       window.location.reload();
     }
-  
   }
-  function showManagerProfileForm(e){
+  function showManagerProfileForm(e) {
     if (e.target.id === "ontopAdmin") {
-      setManageUserProfile(!manageUserProfile)
-      
+      setManageUserProfile(!manageUserProfile);
     }
   }
 
   return (
     <div className="banner">
       <header className="header">
-        <div className="header_brand" onClick={e => window.location.reload()}>
+        <div className="header_brand" onClick={(e) => window.location.reload()}>
           <img src={logo} className="header_logo" alt="logo Groupomania" />
           <h1>Groupomania</h1>
         </div>
@@ -61,7 +57,7 @@ function Banner({ userName, setUserName }) {
               id="signout"
               onClick={handleClick}
             >
-              Deconnexion
+              Déconnexion
             </button>{" "}
             {user.isAdmin && (
               <button
@@ -77,9 +73,12 @@ function Banner({ userName, setUserName }) {
           </div>
         )}
       </header>
-      {viewProfile && <MyProfile setViewProfile={setViewProfile}/>}
-      {manageUserProfile && <div className="ontop" id="ontopAdmin"
-      onClick={showManagerProfileForm}><ManageUsersProfile /></div>}
+      {viewProfile && <MyProfile setViewProfile={setViewProfile} />}
+      {manageUserProfile && (
+        <div className="ontop" id="ontopAdmin" onClick={showManagerProfileForm}>
+          <ManageUsersProfile manageUserProfile={manageUserProfile} setManageUserProfile={setManageUserProfile} />
+        </div>
+      )}
       <Search userName={userName} setUserName={setUserName} />
     </div>
   );

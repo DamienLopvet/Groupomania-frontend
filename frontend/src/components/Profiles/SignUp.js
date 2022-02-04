@@ -1,18 +1,27 @@
 import React from "react";
-
 import "../../styles/index.css";
 import { useContext, useState } from "react";
 import axios from "axios";
 import { UserContext } from "../UserContext";
+import eye from "../../assets/eye.png";
 
 function SignUp() {
   const [isLogged, setIsLogged] = useState();
-const [userName, setuserName] = useState("");
+  const [userName, setuserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { setUser } = useContext(UserContext);
   const [Error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const handleShowPassword = (e) => {
+    e.preventDefault();
+    setShowPassword(true);
+  };
+  const handleHidePassword = (e)=>{
+    e.preventDefault()
+    setShowPassword(false)
+  }
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -66,6 +75,7 @@ const [userName, setuserName] = useState("");
               name="userName"
               id="userName"
               placeholder="Surnom"
+              required
               onChange={(e) => setuserName(e.target.value)}
               value={userName}
             />
@@ -76,21 +86,36 @@ const [userName, setuserName] = useState("");
               type="email"
               name="email"
               id="email"
-              placeholder="Email"
+              placeholder="Email@groupomania.org"
+              pattern="^(.*)@(groupomania.org)$"
+              title="un email @groupomania.org est obligatoire"
+              required
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
           </label>
           <label htmlFor="password">
-            <input
-              className="sign_field"
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Mot de passe"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-            />
+            <div className="signInPassword">
+              <input
+                className="sign_field"
+                type={showPassword ? "text" : "password"}
+                name="password"
+                id="password"
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?&.]{8,12}"
+                title="Le mot de passe devrait contenir entre 8 et 12 charactères, un symbole et au moins une majuscule, une minuscule et un chiffre."
+                placeholder="Mot de passe"
+                required
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+              />
+              <img
+                src={eye}
+                alt="show password"
+                className="showPassword"
+                onMouseDown={handleShowPassword}
+                onMouseUp={handleHidePassword}
+              />
+            </div>
           </label>
           {Error && <div className="alert">{errorMessage}</div>}
           <input type="submit" value="Créer un compte" className="btn  " />

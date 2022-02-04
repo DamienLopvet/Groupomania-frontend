@@ -16,7 +16,7 @@ function PostForm({ onAdd }) {
   };
 
   return user.isLogged ? (
-    <div className="sendPost">
+    <div className="sendPost" id="postForm">
       <form action="" className="sendPost_form">
         <label htmlFor="message" className="sendPost_message_label">
           <textarea
@@ -58,6 +58,7 @@ function PostForm({ onAdd }) {
           <span>Pièce jointe</span>
           <img
             src={deleteIcon}
+            id="deleteIcon_sendpost"
             alt="icon de suppression"
             className="delete_icon"
             onClick={() => setAttachmentUrl(null)}

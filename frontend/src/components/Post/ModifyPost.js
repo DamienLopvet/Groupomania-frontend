@@ -3,7 +3,9 @@ import { useState } from "react";
 import sendMessage from "../../assets/sendMessage.png";
 import trombone from "../../assets/trombone.png";
 import deleteIcon from "../../assets/deleteIcon.png"
+
 const ModifyPost = ({ 
+  postUserId,
   postId, 
   onModifyPost, 
   setShowModifyPost, 
@@ -17,9 +19,11 @@ const ModifyPost = ({
     setNewAttachmentUrl(null);
     setModifyPostError(false)
   };
+
+
   return (
     <div className="sendPost white">
-      <form action="" className="sendPost_form">
+      <form action="" className="sendPost_form" id='modifyPostForm'>
         <label htmlFor="message" className="sendPost_message_label">
           <textarea
           placeholder='modifier le texte du Post'

@@ -30,7 +30,7 @@ const Comments = ({
       )}{" "}
       {comments.length === 0 && (
         <div className="messageList_comment" id="messageList_comment">
-          Soyez le premier à laisser un commentaire !!{" "}
+         <p> Soyez le premier à laisser un commentaire !!</p>{" "}
         </div>
       )}
       <CommentForm
