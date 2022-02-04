@@ -113,7 +113,6 @@ const Post = ({
           }
           {post.attachmentUrl.split(".").pop() === "m4a" &&
           <figure>
-          <figcaption>Audio</figcaption>
           <audio
               controls
               src={post.attachmentUrl}>
