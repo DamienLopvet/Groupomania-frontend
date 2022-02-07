@@ -1,11 +1,12 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #091f43;
+  max-width: 1920px;
   background-image: url(https://www.history.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg0NTg4OTc1MDYxNjA3OTEx/interstate-highway-gettyimages-1318535229.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -182,7 +183,6 @@ img:active,
   margin-bottom: 20px;
   position: sticky;
   top: 0;
-  
 }
 .sendPost_form {
   text-align: center;
@@ -211,6 +211,7 @@ img:active,
   padding: 7px 5px;
   vertical-align: 0px;
   border-radius: 20px;
+  margin-left: 2px;
 }
 .sendPost_message_icon:hover {
   opacity: 0.9;
@@ -304,7 +305,7 @@ img:active,
 .search_input {
   width: 17px;
   max-width: 315px;
-  border-radius: 10px;
+  border-radius: 15px;
   border: 1px solid #d1515a;
   margin: 5px 10px 5px 0;
   padding: 8px;
@@ -328,7 +329,7 @@ img:active,
   width: 17px;
   pointer-events: none;
   background: #fff;
-  padding: 7px;
+  padding: 6px;
   border-radius: 13px;
 }
 .userNameWelcome {
@@ -361,20 +362,21 @@ img:active,
   margin-bottom: 10px;
   width: 100%;
 }
-.messageList_message {
-  background-color: #f2f2f2;
-  border-radius: 20px;
-  max-width: 500px;
-  padding: 10px;
-}
 .message_list_option{
   position: relative;
 }
 #commentsLenght{
   position: absolute;
-  bottom: -5px;
-  left: 32px;
-  font-size: 12px;
+  bottom: 0px;
+  left: 30px;
+  font-size: 10px;
+}
+.messageList_message {
+  background-color: #f2f2f2;
+  border-radius: 20px;
+  max-width: 500px;
+  padding: 10px;
+  word-wrap: break-word;
 }
 .messagList_date {
   font-size: 12px;
@@ -565,7 +567,7 @@ img:active,
   border-radius: 10px;
   padding: 5px;
 }
-.moderated {
+.moderated{
   color: grey;
   font-style: italic;
   margin: auto;
@@ -582,14 +584,11 @@ img:active,
   position: relative;
 }
 .showPassword{
-  width: 13px;
+  width: 16px;
     height: 11px;
     position: absolute;
     right: 23px;
     top: 23px;
     cursor: pointer;
     outline: none!important;
-}
-figure{
-display: flex;
 }

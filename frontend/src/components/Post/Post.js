@@ -76,31 +76,15 @@ const Post = ({
               <source src={post.attachmentUrl} type="video/mp4"></source>
             </video>
           </div>}
-          {post.attachmentUrl.split(".").pop() === "jpg" &&        
+          {["gif", "png", "jpg", "webp"].includes(post.attachmentUrl.split(".").pop()) &&        
           <div>
-            <img
+            <img  
               src={post.attachmentUrl}
               alt="post"
               className="messageList_attachment"
             ></img>
           </div>}
-          {post.attachmentUrl.split(".").pop() === "png" &&        
-          <div>
-            <img
-              src={post.attachmentUrl}
-              alt="post"
-              className="messageList_attachment"
-            ></img>
-          </div>}
-          {post.attachmentUrl.split(".").pop() === "gif" &&        
-          <div>
-            <img
-              src={post.attachmentUrl}
-              alt="post"
-              className="messageList_attachment"
-            ></img>
-          </div>}
-          {post.attachmentUrl.split(".").pop() === "mp3" &&
+          {["mp3", "m4a"].includes(post.attachmentUrl.split(".").pop()) &&
           <figure>
           <audio
               controls
@@ -111,18 +95,7 @@ const Post = ({
       </figure>
 
           }
-          {post.attachmentUrl.split(".").pop() === "m4a" &&
-          <figure>
-          <audio
-              controls
-              src={post.attachmentUrl}>
-                  Your browser does not support the
-                  <code>audio</code> element.
-          </audio>
-      </figure>
-
-          }
-        
+                  
       </>
       ) : (
         ""
