@@ -84,6 +84,10 @@ const Post = ({
               className="messageList_attachment"
             ></img>
           </div>}
+          {post.attachmentUrl.split(".").pop() === "pdf" &&        
+          <div>
+            <iframe src={post.attachmentUrl} frameBorder="0" width="100%" height="100%" scrolling="auto"></iframe>
+          </div>}
           {["mp3", "m4a"].includes(post.attachmentUrl.split(".").pop()) &&
           <figure>
           <audio
