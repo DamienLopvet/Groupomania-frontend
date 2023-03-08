@@ -1,0 +1,17 @@
+FROM node:14-alpine as build
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+RUN npm run build
+
+CMD [ "npm", "run", "build" ]
+
+# docker build -t groupo-front-build -f ./Dockerfile.build .
+# maybe create a build folder in root folder
+# docker run -v /home/damien/work/OC_projects/Groupomania-frontend/build:/app/build
