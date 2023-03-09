@@ -593,7 +593,8 @@ img:active,
     outline: none!important;
 }
 .homebubble{
-  width: 490px;
+  max-width: 490px;
+  width:85%;
   margin-inline: auto;
   text-align: center;
   margin-top:50px;
@@ -615,6 +616,7 @@ img:active,
     translate: 0 0;
   }
 }
+
 .infoBulleMain{
   position:fixed;
   top: 50%;
