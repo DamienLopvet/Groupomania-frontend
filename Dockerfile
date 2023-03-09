@@ -12,4 +12,4 @@ EXPOSE 3000
 
 CMD [ "npm", "start" ]
 
-## docker run -it --rm -d -p 3040:3000 -v $(pwd):/app -v /app/node_modules --env-file ./.env --name groupofront groupofront_node
+## docker run -it --rm -p 3040:3000 -v $(pwd):/app -v /app/node_modules --env-file ./.env groupo-front

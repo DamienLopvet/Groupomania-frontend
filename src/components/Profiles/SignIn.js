@@ -33,7 +33,6 @@ function SignIn() {
       },
     })
       .then((res) => {
-        console.log(res.data);
         let user_ = {};
         user_.userName = res.data.userName;
         user_.id = res.data.userId;

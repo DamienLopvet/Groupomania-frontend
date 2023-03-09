@@ -40,7 +40,7 @@ function PostsList({ userName }) {
   const [commentErrorMessage, setCommentErrorMessage] = useState("");
 
 //Établir l'interval qui rafraichit la liste des posts
-
+console.log(userName);
   useInterval(() => {
     if (userName === "") fetchData(userName);
   }, 60000);

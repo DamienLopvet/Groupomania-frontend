@@ -86,7 +86,7 @@ function SignUp() {
               type="email"
               name="email"
               id="email"
-              placeholder="Email@groupomania.org"
+              placeholder="YourName@groupomania.org"
               pattern="^(.*)@(groupomania.org)$"
               title="un email @groupomania.org est obligatoire"
               required

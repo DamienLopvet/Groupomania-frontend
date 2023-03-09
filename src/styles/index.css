@@ -592,3 +592,40 @@ img:active,
     cursor: pointer;
     outline: none!important;
 }
+.homebubble{
+  width: 490px;
+  margin-inline: auto;
+  text-align: center;
+  margin-top:50px;
+  color:white;
+  background-color:#091f43;
+  padding:20px;
+  border-radius:5px;
+  animation: bubbleHomeFade 1000ms forwards;
+  opacity:0;
+  translate: 0 40px
+}
+@keyframes bubbleHomeFade{
+  from{
+    opacity:0;
+    translate: 0 40px;
+  }
+  to{
+    opacity:1;
+    translate: 0 0;
+  }
+}
+.infoBulleMain{
+  position:fixed;
+  top: 50%;
+  left:20px;
+  width:300px;
+  color:white;
+  background-color:#091f43;
+  padding:20px;
+  border-radius:5px;
+  animation: bubbleHomeFade 1000ms forwards;
+  opacity:0;
+  translate: 0 40px;
+
+}
